@@ -1,1 +1,196 @@
-Hello World
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Currículum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #222;
+            color: #ddd;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+        }
+
+        body.dark-mode header {
+            background-color: #111;
+        }
+
+        .switch-container {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .switch {
+            cursor: pointer;
+            padding: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        body.dark-mode .switch {
+            background: #ddd;
+            color: #222;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode section {
+            background-color: #333;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+
+
+
+        body.dark-mode h1, 
+        body.dark-mode h2 {
+            color: #bbb;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .info div {
+            flex: 1;
+            padding: 10px;
+            margin: 0 5px;
+            background-color: #f0f0f0;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode .info div {
+            background-color: #444;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .info {
+                flex-direction: column;
+            }
+
+            .profile-pic {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: #ddd;" >Mi Currículum</h1>
+        <div class="switch-container">
+            <button class="switch" onclick="toggleDarkMode()">Modo Oscuro</button>
+        </div>
+    </header>
+
+    <section>
+        
+        <div style="text-align: center;">
+            <img class="profile-pic" src="Actividad5\resources\3Recurso 1.png" alt="Foto de perfil">
+        </div>
+    </section>
+
+    <section>
+        <h2>Datos Personales</h2>
+        <div class="info">
+            <div>
+                <h3>Nombre</h3>
+                <p>Cesar Escalante</p>
+            </div>
+            <div>
+                <h3>Correo Electrónico</h3>
+                <p>cesar.escalante@galileo.edu</p>
+            </div>
+            <div>
+                <h3>Teléfono</h3>
+                <p>(502) 1234-5678</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Experiencia Laboral</h2>
+        <div>
+            <h3>Desarrollador Web</h3>
+            <p>Trabajo + | Fecha de inicio - Fecha de fin</p>
+            <ul>
+                <li>Logros y responsabilidades...</li>
+                <li>Más logros y responsabilidades...</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Otro Trabajo</h3>
+            <p>otro trabajo - Ciudad de Guatemala, Guatemala | 2019 - 2022</p>
+            <ul>
+                <li>Logros y responsabilidades...</li>
+                <li>Más logros y responsabilidades...</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Educación</h2>
+        <div>
+
+            <h3>Grado Universitario</h3>
+            <p>Nombre de la Universidad - Ciudad, País | Fecha de inicio - Fecha de fin</p>
+            <p>Título obtenido y especialización (si aplica)</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.querySelector('.switch');
+            if (document.body.classList.contains('dark-mode')) {
+                button.textContent = 'Modo Claro';
+            } else {
+                button.textContent = 'Modo Oscuro';
+            }
+        }
+    </script>
+</body>
+</html>
